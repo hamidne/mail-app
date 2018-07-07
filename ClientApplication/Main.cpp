@@ -10,7 +10,7 @@
 #include <string.h>
 #include "Button.h"
 #include "Client.h"
-#include "font.h"
+#include "Font.h"
 
 using namespace std;
 
