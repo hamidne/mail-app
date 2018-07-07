@@ -14,7 +14,7 @@
 
 using namespace std;
 
-Client creatClient(80);
+Client creatClient(8080);
 
 SDL_Window *screen;
 SDL_Renderer *renderer;
