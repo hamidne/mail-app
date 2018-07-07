@@ -374,4 +374,5 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
+
 !Tools/SDL2_Installer.exe
