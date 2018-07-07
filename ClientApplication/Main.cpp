@@ -39,8 +39,7 @@ int SendMenu()
 	Button send(renderer, "Send Menu/Send.png", "Send Menu/Send1.png");
 	Button Delete(renderer, "Send Menu/Delete.png", "Send Menu/Delete1.png");
 	Button font(renderer, "Send Menu/Font.png", "Send Menu/Font1.png", "Send Menu/Font2.png");
-	Button Icon(renderer, "Send Menu/Icon.png", "Send Menu/Icon1.png", "Send Menu/Icon2.png",
-		"Send Menu/Icon3.png", "Send Menu/Icon4.png");
+	Button Icon(renderer, "Send Menu/Icon.png", "Send Menu/Icon1.png", "Send Menu/Icon2.png", "Send Menu/Icon3.png", "Send Menu/Icon4.png");
 	Button Back(renderer, "Send Menu/Back.png", "Send Menu/Back1.png");
 	Button FontBackgrount(renderer, "Send Menu/FontBackgrount.png", "Send Menu/FontBackgrount1.png");
 	Button FontBackgrountD(renderer, "Send Menu/FontBackgrountD.png", "Send Menu/FontBackgrountD1.png");
