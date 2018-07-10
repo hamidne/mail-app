@@ -32,8 +32,8 @@ private:
 	int sizeSendMail;
 	int sizeRecvMail;
 	int ID_Account;
-	char username[16];
-	char password[16];
+	string username;
+	string password;
 	char recipient[16];
 	char subject[16];
 	char context[512];
@@ -154,13 +154,12 @@ void StrProcessing::loginProcessing()
 {
 	sizeAccount = file.getSizeAccount();
 
-	memset(username, '\0', 16);
-	memset(password, '\0', 16);
+	regex rgx("login#(.+)#(.+)");
+	smatch matches;
+	regex_search(receivChar, matches, rgx);
 
-	receivChar.erase(0, 6);
-	receivChar.copy(username, receivChar.find('#'), 0);
-	receivChar.erase(0, receivChar.find('#') + 1);
-	receivChar.copy(password, receivChar.find('#'), 0);
+	username = matches[1].str();
+	password = matches[2].str();
 
 	bool existPass = false, existUser = false;
 
@@ -173,6 +172,7 @@ void StrProcessing::loginProcessing()
 			{
 				existUser = true;
 				existPass = true;
+				break;
 			}
 		}
 	}
@@ -228,7 +228,7 @@ void StrProcessing::sendProcessing()
 
 		strcpy(mail_Struct.ExistMail, "1");
 		strcpy(mail_Struct.ReadOrNo, "0");
-		strcpy(mail_Struct.sender, username);
+		strcpy(mail_Struct.sender, username.c_str());
 		strcpy(mail_Struct.recipient, recipient);
 		strcpy(mail_Struct.subject, subject);
 		strcpy(mail_Struct.date, timeClass.getDate().c_str());
