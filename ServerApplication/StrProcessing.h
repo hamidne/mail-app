@@ -163,25 +163,20 @@ void StrProcessing::loginProcessing()
 
 	bool existPass = false, existUser = false;
 
-	int i;
-	for (i = 0; i < sizeAccount && (!existUser || !existPass); i++)
-	{
+	for (int i = 0; i < sizeAccount; i++)
 		if (username == username_pass[i].username)
-		{
 			if (password == username_pass[i].password)
 			{
 				existUser = true;
 				existPass = true;
+				ID_Account = i - 1;
 				break;
 			}
-		}
-	}
 
 	if (existUser && existPass)
 	{
 		char *sendStr = "1";
 		send(Client, sendStr, strlen(sendStr), 0);
-		ID_Account = i - 1;
 		file.Load_ReciveMail(ID_Account);
 		file.Load_SendMail(ID_Account);
 	}
